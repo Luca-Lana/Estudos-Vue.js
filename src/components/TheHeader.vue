@@ -1,6 +1,8 @@
 <template>
     <div class="header">
-        Header
+        <slot name='title'/>
+        <slot name='description'/>
+        <slot/>
     </div>
     <div class="todo-items" v-for="obj in todos" :key="obj.id" >
         {{ obj.title }}
