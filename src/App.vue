@@ -1,71 +1,10 @@
 <template>
-  <TheHeaderVue v-if="showHeader">
-    <template v-slot:title>
-      <h1>Teste cabelçhao pelo slot</h1>
-    </template>
-    <template v-slot:description>
-      <p>Descrição do slot</p>
-    </template>
-      default sem nada mesmo
-  </TheHeaderVue>
-  <div v-show="showName">
-    Nome: {{ name }}
-  </div>
-  <div v-if="accessLevel === 'admin'">Usuario Admin</div>
-  <div v-else-if="accessLevel === 'marketing'">Usuario Marketing</div>
-  <div v-else>Usuario normal</div>
-  <TwoWayVue/>
-  <TheEventosVue/>
-  <TheComputedVue/>
-  <TheObserverVue/>
-  <BaseCardVue/>
-  <div class="card">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad dolores asperiores atque eum modi provident magni! Consequatur ad iste id provident cupiditate! Harum nulla, aliquid obcaecati id voluptatum tempore.
-  </div>
-  <br><br>
-  <BaseAlertVue varStyle='alert'/>
-  <br><br><br>
-  <DadosDoFilhoParaPaiVue v-if="showAlert" @fecharAlert="close"/>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view/>
 </template>
-
-<script>
-import TheHeaderVue from './components/TheHeader.vue';
-import TwoWayVue from './components/TwoWay.vue';
-import TheEventosVue from './components/TheEventos.vue';
-import TheComputedVue from './components/TheComputed.vue';
-import TheObserverVue from './components/TheObserver.vue';
-import BaseCardVue from './components/BaseCard.vue';
-import BaseAlertVue from './components/BaseAlert.vue';
-import DadosDoFilhoParaPaiVue from './components/DadosDoFilhoParaPai.vue';
-
-export default {
-  name: 'App',
-  components: {
-    TheHeaderVue,
-    TwoWayVue,
-    TheEventosVue,
-    TheComputedVue,
-    TheObserverVue,
-    BaseCardVue,
-    BaseAlertVue,
-    DadosDoFilhoParaPaiVue
-  },
-  methods: {
-    close() {
-      this.showAlert = false;
-    }
-  },
-  data () {
-    return {
-      showAlert: true,
-      showHeader :true,
-      name: 'Luquete',
-      showName: true,
-      accessLevel: 'marketing',
-    }
-  },
-}
-</script>
 
 <style>
 #app {
@@ -74,6 +13,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
