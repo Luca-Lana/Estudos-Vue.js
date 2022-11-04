@@ -5,7 +5,12 @@
 </template>
 <script>
 export default {
-    props: ['varStyle']
+    props: {
+        varStyle: {
+            type: String,
+            default: '',
+        }
+    }
 }
 </script>
 <style scoped>
