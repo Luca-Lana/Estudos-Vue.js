@@ -8,6 +8,7 @@ export default createStore({
       email: 'jon@gmail.com'
     },
     numbers: [1,2,3,4,5],
+    carrinho: [],
     products: [
       {
         id: 1,
@@ -41,6 +42,9 @@ export default createStore({
   mutations: {
     storeUser(state, data) {
       state.user = data
+    },
+    addProduct(state, data) {
+      state.carrinho.push(data);
     }
   },
   actions: {
