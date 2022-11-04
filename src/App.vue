@@ -24,6 +24,8 @@
   </div>
   <br><br>
   <BaseAlertVue varStyle='alert'/>
+  <br><br><br>
+  <DadosDoFilhoParaPaiVue v-if="showAlert" @fecharAlert="close"/>
 </template>
 
 <script>
@@ -34,6 +36,7 @@ import TheComputedVue from './components/TheComputed.vue';
 import TheObserverVue from './components/TheObserver.vue';
 import BaseCardVue from './components/BaseCard.vue';
 import BaseAlertVue from './components/BaseAlert.vue';
+import DadosDoFilhoParaPaiVue from './components/DadosDoFilhoParaPai.vue';
 
 export default {
   name: 'App',
@@ -45,9 +48,16 @@ export default {
     TheObserverVue,
     BaseCardVue,
     BaseAlertVue,
+    DadosDoFilhoParaPaiVue
+  },
+  methods: {
+    close() {
+      this.showAlert = false;
+    }
   },
   data () {
     return {
+      showAlert: true,
       showHeader :true,
       name: 'Luquete',
       showName: true,
