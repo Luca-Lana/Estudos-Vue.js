@@ -22,6 +22,8 @@
   <div class="card">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad dolores asperiores atque eum modi provident magni! Consequatur ad iste id provident cupiditate! Harum nulla, aliquid obcaecati id voluptatum tempore.
   </div>
+  <br><br>
+  <BaseAlertVue varStyle='alert'/>
 </template>
 
 <script>
@@ -31,7 +33,7 @@ import TheEventosVue from './components/TheEventos.vue';
 import TheComputedVue from './components/TheComputed.vue';
 import TheObserverVue from './components/TheObserver.vue';
 import BaseCardVue from './components/BaseCard.vue';
-
+import BaseAlertVue from './components/BaseAlert.vue';
 
 export default {
   name: 'App',
@@ -42,6 +44,7 @@ export default {
     TheComputedVue,
     TheObserverVue,
     BaseCardVue,
+    BaseAlertVue,
   },
   data () {
     return {
