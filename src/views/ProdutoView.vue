@@ -4,6 +4,10 @@
     <br><br>
     <h2>Carrinho</h2>
     {{ $store.state.carrinho }}
+    <br><br>
+    <div>
+        <bold>Total:</bold> R$: {{ $store.getters.totalCarrinho }}
+    </div>
 </template>
 <script>
 import ProductCardVue from '@/components/ProductCard.vue';

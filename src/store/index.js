@@ -38,6 +38,9 @@ export default createStore({
     ]
   },
   getters: {
+    totalCarrinho(state) {
+      return state.carrinho.reduce((total, item) => total += item.price, 0).toFixed(2).replace('.',',')
+    }
   },
   mutations: {
     storeUser(state, data) {
